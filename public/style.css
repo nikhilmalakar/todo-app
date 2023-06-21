@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(27, 27, 27);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main{
+    background-color: rgb(114, 114, 114);
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+
+.list-container{
+    background-color: rgb(27, 27, 27);
+    width: 80%;
+    margin: auto;
+    height: 65%;
+}
