@@ -1,8 +1,9 @@
 import React from "react";
 
-    function List(){
+    function List(props){
         return(
-            <div className="list-container">
+            <div className="list-div" id={props.style}>
+                <h2>{props.title}</h2>
                 <ul>
                     <li>Buy Milk</li>
                 </ul>
