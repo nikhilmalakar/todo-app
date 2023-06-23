@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import AddCircleIcon from '@mui/material';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AddUpArrow from '@material-ui/icons/KeyboardArrowUp'
+import { AccessAlarm } from "@material-ui/icons";
 
     function Input(){
 
@@ -9,17 +11,28 @@ import AddCircleIcon from '@mui/material';
             setIsExpanded(true);
         }
 
+        function minimize(){
+            setIsExpanded(false);
+        }
+
         return (
             <div className="input-container">
                 {
                     isExpanded && (
-                        <input type="text" id="input-title" name="todo-title" placeholder="Task Title" />
+                        <div className="input-titlebar">
+                            <input type="text" id="input-title" name="todo-title" placeholder="Task Title" />
+                            <button><AccessAlarm/></button>
+                            <button onClick={minimize}><AddUpArrow /></button>
+                        </div>
                     )
                 }
-                <textarea onClick={expand} id="input-description" name="todo-input" type="text" placeholder="What's on your mind today?" rows={isExpanded? 2 : 1} />
+                <textarea onClick={expand} id="input-description" width="100%" name="todo-input" type="text" placeholder="What's on your mind today?" rows={isExpanded? 2 : 1} />
+                
                 {
                     isExpanded && (
-                        <AddCircleIcon></AddCircleIcon>
+                        <div className="add-button">
+                            <button><AddCircleOutlineIcon /></button>
+                        </div>
                     )
                 }
             </div>
