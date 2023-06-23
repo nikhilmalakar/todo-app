@@ -2,15 +2,19 @@ import React from "react";
 
     function Header(){
         return (
-            <div className="header">
-                <div className="brand">
-                    <h1>ToDo App</h1>
+            
+            <nav className="navbar bg-body-tertiary">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="#">
+                        <img src="/src/images/Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                        ToDo App
+                    </a>
+                    <form className="d-flex" role="search">
+                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button className="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
-                <div className="header-menu">
-                    <input type="text" placeholder="Search task" />
-                    <img src="" alt="avatar"/>
-                </div>
-            </div>
+            </nav>
         )
     }
 

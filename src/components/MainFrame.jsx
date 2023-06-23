@@ -9,6 +9,8 @@ import Header from "./Header";
         const options = {weekday : 'long'}
         var day = date.toLocaleDateString('en-US',options);
 
+        
+
         return (
             <div>
                 <Header />
