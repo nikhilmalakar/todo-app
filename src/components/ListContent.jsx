@@ -2,34 +2,25 @@ import { useState } from "react";
 
 
     function ListContent(props){
-        
-        // console.log(props.item);
-        // const itemList = props.item.shift();
-        const [itemListToday, setItemListToday] = useState(props.item);
-        var currDate = new Date();
-        
 
-        // function print(item){
-        //     return(
-        //         <li>{item}</li>
-        //     )
-        // }
+        const tasks = (props.tasks);
 
-        function test(){
-            setItemListToday(
-                itemListToday.filter((item) => {
-                    // if(item.deadline != null && item.deadline.getDate === currDate.getDate) ;
-                    return item.deadline != null && console.log(item) && item.deadline.getDate === currDate.getDate;
-                }  )
-            )
-        }
-        
+        // setTimeout(handleSubmit, 10000);
+
         return(
             <div>
                 <ul>
-                    {/* {itemList.map(print)} */}
-                    {/* <button onClick={test}>Helllooo</button> */}
-                    {/* {console.log(itemListToday)} */}
+                    {tasks && tasks.length > 0 ? (
+                        <ul>
+                        {tasks.map((task, index) => (
+                            <li key={index}>
+                            <strong>{task.title}</strong> - {task.description}
+                            </li>
+                        ))}
+                        </ul>
+                    ) : (
+                        <p>No tasks for today</p>
+                    )}
                 </ul>
             </div>
         )

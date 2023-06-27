@@ -36,13 +36,14 @@ import { AccessAlarm } from "@material-ui/icons";
             setDeadline(temp);
         }
 
+
         return (
             <div className="input-container" style={{height: isExpanded && "25%"}} >
                 {
                     isExpanded && (
                         <div className="input-titlebar">
                             <input onChange={addTitle} type="text" id="input-title" name="todo-title" placeholder="Task Title" />
-                            {/* <button><input onChange={addDate} /><AccessAlarm/></button> */}
+                            <button><input type="date" onChange={addDate} /><AccessAlarm/></button>
                             <button onClick={minimize}><AddUpArrow /></button>
                         </div>
                     )
@@ -56,6 +57,7 @@ import { AccessAlarm } from "@material-ui/icons";
                             onClick={
                                 ()=> {props.onAdd(todoTitle, todoDesc, dline);}
                             }
+
                             ><AddCircleOutlineIcon fontSize="large"/></button>
                         </div>
                     )

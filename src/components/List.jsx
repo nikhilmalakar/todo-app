@@ -5,7 +5,7 @@ import ListContent from "./ListContent";
         return(
             <div className="list-div" id={props.style}>
                 <h2>{props.title}</h2>
-                <ListContent item={props.item}/>
+                <ListContent tasks={props.tasks}/>
             </div>
         )
     }
