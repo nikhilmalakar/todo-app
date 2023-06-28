@@ -1,22 +1,19 @@
 import React from "react";
+import logo from "../images/Logo.png";
 
     function Header(){
         return (
-
+            <div className="header">
+                <img src={logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                <h1>ToDo List App</h1>
+            </div>
         
             
-            <nav className="navbar bg-body-tertiary">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
-                        <img src="/src/images/Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
-                        ToDo App
-                    </a>
-                    <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </nav>
+            // <nav className="navbar bg-body-tertiary">
+            //     <div className="container-fluid">
+                    
+            //     </div>
+            // </nav>
         )
     }
 

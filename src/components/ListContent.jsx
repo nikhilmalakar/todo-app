@@ -6,6 +6,8 @@ import { useState } from "react";
         const tasks = (props.tasks);
 
         // setTimeout(handleSubmit, 10000);
+        
+        const listTitle = props.title;
 
         return(
             <div>
@@ -19,7 +21,7 @@ import { useState } from "react";
                         ))}
                         </ul>
                     ) : (
-                        <p>No tasks for today</p>
+                        <p> {listTitle === "" ? "Plan you day now!" : "No tasks available!"}</p>
                     )}
                 
             </div>

@@ -6,9 +6,7 @@ import Footer from "./Footer";
 
     function MainFrame(){
 
-        var date = new Date();
-        const options = {weekday : 'long'}
-        var day = date.toLocaleDateString('en-US',options);
+        
 
         const [todayTasks, setTodayTasks] = useState([]);
         const [tomorrowTasks, setTomorrowTasks] = useState([]);
@@ -59,7 +57,7 @@ import Footer from "./Footer";
 
                             <div className="center-container">
                                 <Input title="input-container" onAdd={handleSubmit} />
-                                <List title="Hello  ${day}" style="today-container" tasks={todayTasks}/>
+                                <List title="" style="today-container" tasks={todayTasks}/>
                             </div>
                             
                             <List title="Next day"  tasks={tomorrowTasks} />
