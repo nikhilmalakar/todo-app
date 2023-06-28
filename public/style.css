@@ -45,27 +45,59 @@ body{
 
 .input-titlebar{
     display: flex;
+    align-items: center;
 }
 
 .input-titlebar button{
-    background-color: rgb(81, 29, 29);
+    /* background-color: rgb(81, 29, 29); */
     border-radius: 50%;
     width: 40px;
     height: 38px;
     margin: 1px;
 }
 .input-container #input-title{
-    width: 70%;
+    width: 80%;
     flex-grow: 2;
+    font-weight: 600;
 }
+
+.input-text{
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+
 .input-container #input-description{
     width: 100%;
     font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: -5px;
 }
 .input-container #input-description, #input-title{
     border: none;
     padding: 5px 0;
     position: relative;
+}
+
+.date-picker input{
+    width: 75%;
+    margin: 0;
+    border: solid 1px #e6e6e6;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.date-picker input:focus{
+    border: solid 1px  rgb(184, 184, 184) !important;
+    border: none;
+    outline: none;
+}
+
+.date-picker input:active{
+    border: none;
 }
 
 .add-button{
@@ -100,6 +132,17 @@ body{
     height: 100%;
     border-radius: 15px;
     padding: 30px 40px;
+}
+
+.list-div ul{
+    padding: 0;
+}
+.list-div li{
+    border-bottom: solid black 1px;
+    padding: 7px 0;
+    list-style-type: none;
+    width: 90%;
+    margin: auto;
 }
 
 #today-container{

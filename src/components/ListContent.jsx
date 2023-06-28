@@ -9,11 +9,11 @@ import { useState } from "react";
 
         return(
             <div>
-                <ul>
                     {tasks && tasks.length > 0 ? (
                         <ul>
                         {tasks.map((task, index) => (
                             <li key={index}>
+                                {/* <input className="list-checkbox" type="checkbox" ></input> */}
                             <strong>{task.title}</strong> - {task.description}
                             </li>
                         ))}
@@ -21,7 +21,7 @@ import { useState } from "react";
                     ) : (
                         <p>No tasks for today</p>
                     )}
-                </ul>
+                
             </div>
         )
     }

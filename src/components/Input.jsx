@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AddUpArrow from '@material-ui/icons/KeyboardArrowUp'
 import { AccessAlarm } from "@material-ui/icons";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+
 
     function Input(props){
 
@@ -37,25 +41,51 @@ import { AccessAlarm } from "@material-ui/icons";
         }
 
 
+        // Date picker component
+        const [selectedDate, setSelectedDate] = useState(null);
+        const datePickerRef = useRef(null);
+    
+        const handleDateChange = (date) => {
+        setSelectedDate(date);
+        };
+    
+        const today = new Date();
+
+
+
         return (
-            <div className="input-container" style={{height: isExpanded && "25%"}} >
+            <div className="input-container" style={{height: isExpanded && "160px"}} >
                 {
                     isExpanded && (
                         <div className="input-titlebar">
-                            <input onChange={addTitle} type="text" id="input-title" name="todo-title" placeholder="Task Title" />
-                            <button><input type="date" onChange={addDate} /><AccessAlarm/></button>
+                            <input onChange={addTitle} className="input-text" type="text" id="input-title" name="todo-title" placeholder="Task Title" />
+                            {/* <button><input type="date" onChange={addDate} /><AccessAlarm/></button> */}
+                            {/* <DateSelector /> */}
+
+                            <div className="date-picker">
+                            {/* <button onClick={() => { datePickerRef.current.focus(); }}></button> */}
+                            <DatePicker
+                            selected={selectedDate}
+                            onChange={handleDateChange}
+                            minDate={today}
+                            dateFormat="yyyy-MM-dd"
+                            placeholderText="Set deadline"
+                            ref={datePickerRef}
+                            />
+                            </div>
+
                             <button onClick={minimize}><AddUpArrow /></button>
                         </div>
                     )
                 }
-                <textarea onClick={expand} onChange={addDesc} id="input-description" width="100%" name="todo-desc" type="text" placeholder="What's on your mind today?" rows="1" />
+                <textarea className="input-text" onClick={expand} onChange={addDesc} id="input-description" width="100%" name="todo-desc" type="text" placeholder="What's on your mind today?" rows="1" />
                 
                 {
                     isExpanded && (
                         <div className="add-button">
                             <button type="submit" 
                             onClick={
-                                ()=> {props.onAdd(todoTitle, todoDesc, dline);}
+                                ()=> {props.onAdd(todoTitle, todoDesc, selectedDate);}
                             }
 
                             ><AddCircleOutlineIcon fontSize="large"/></button>
