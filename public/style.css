@@ -24,6 +24,10 @@ body{
 .header h1{
     font-weight: 700;
     font-size: 35px;
+    /* color: linear-gradient(120deg, rgb(57, 0, 98), rgb(203, 18, 203)) ; */
+    background: linear-gradient(180deg, rgb(148, 36, 228), rgb(255, 60, 144));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .header img{
     width: 95px;
@@ -69,10 +73,11 @@ body{
     height: 38px;
     margin: 1px;
 }
+
 .input-container #input-title{
     width: 80%;
     flex-grow: 2;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .input-text{

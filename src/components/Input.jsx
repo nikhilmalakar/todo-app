@@ -50,14 +50,16 @@ import 'react-datepicker/dist/react-datepicker.css';
         };
     
         const today = new Date();
+        const maxD = new Date();
 
+        maxD.setDate(maxD.getDate() + 7);
 
 
         return (
             <div className="input-container" style={{height: isExpanded && "160px"}} >
                 {
                     isExpanded && (
-                        <div className="input-titlebar">
+                        <div className="input-titlebar" >
                             <input onChange={addTitle} className="input-text" type="text" id="input-title" name="todo-title" placeholder="Task Title" />
                             {/* <button><input type="date" onChange={addDate} /><AccessAlarm/></button> */}
                             {/* <DateSelector /> */}
@@ -68,6 +70,7 @@ import 'react-datepicker/dist/react-datepicker.css';
                             selected={selectedDate}
                             onChange={handleDateChange}
                             minDate={today}
+                            maxDate={maxD}
                             dateFormat="yyyy-MM-dd"
                             placeholderText="Set deadline"
                             ref={datePickerRef}
