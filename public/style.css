@@ -68,10 +68,52 @@ body{
 
 .input-titlebar button{
     /* background-color: rgb(81, 29, 29); */
-    border-radius: 50%;
+    /* border-radius: 50%;
     width: 40px;
     height: 38px;
-    margin: 1px;
+    margin: 1px; */
+}
+
+.upArrow{
+    background-color: white;
+    border: inset 3px rgb(212, 212, 212);
+    width: 40px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: green;
+}
+.upArrow .MuiSvgIcon-root{
+    fill:black !important;
+}
+
+.upArrow:hover{
+    border: purple inset 3px;
+    background-color: rgb(243, 189, 243);
+}
+
+.addButton {
+    position: relative;
+    top:5px;
+    left:10vw;
+    border-radius: 20px;
+    background: linear-gradient(130deg, #330d8b, #ef2c80) ;
+    width: 100%;
+    border: 1px inset gray;
+    margin-top: 2px;
+    border-radius: 50%;
+    height: 47px;
+    width: 48px;
+    box-shadow: rgb(92, 92, 92) 2px 1px 4px 1px;
+    fill: white;
+    cursor: pointer;
+}
+
+.addButton:hover{
+}
+
+.MuiSvgIcon-root{
+    fill:white !important;
 }
 
 .input-container #input-title{
@@ -107,6 +149,7 @@ body{
     border: solid 1px #e6e6e6;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 }
 
 .date-picker input:focus{
@@ -119,23 +162,6 @@ body{
     border: none;
 }
 
-.add-button{
-    position: absolute;
-    margin-left: 20rem;
-    margin-top: 5px;
-    background-color: rgb(81, 29, 29);
-    border-radius: 40px;
-    height: 43.5px;
-    width: 46px;
-}
-
-.add-button button{
-    border-radius: 20px;
-    background-color: transparent;
-    width: 100%;
-    border: none;
-    margin-top: 2px;
-}
 
 .list-container{
     display: flex;
@@ -146,7 +172,7 @@ body{
 }
 
 .list-div{
-    background: linear-gradient(120deg, rgb(42, 0, 71), rgb(150, 4, 150)) ;
+    background: linear-gradient(130deg, #230861, #f03787) ;
     width: 32%;
     height: 100%;
     border-radius: 15px;
@@ -164,8 +190,23 @@ body{
     margin: auto;
 }
 
+.listContent{
+    width: 85%;
+    cursor: default;
+    display: inline-block;
+}
+
+.deleteIcon{
+    display: inline;
+    cursor:pointer;
+}
+.deleteIcon img{
+    width: 18px;
+    color: #e6e6e6;
+}
+
 #today-container{
-    background: linear-gradient(120deg, rgb(57, 0, 98), rgb(203, 18, 203)) ;
+    background: linear-gradient(130deg, #330d8b, #ef2c80) ;
     /* height: 70%; */
     width: 100%;
     margin-top: 30px    ;

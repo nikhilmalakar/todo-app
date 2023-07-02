@@ -9,10 +9,14 @@ import ListContent from "./ListContent";
 
         const listTitle = props.title;
 
+        const deleteIdHandler = (id) => {
+            props.onChecked(id);
+        };
+
         return(
             <div className="list-div" id={props.style}>
                 <h2>{listTitle === "" ? "Hello! " + day : props.title}</h2>
-                <ListContent tasks={props.tasks} title={listTitle}/>
+                <ListContent tasks={props.tasks} title={listTitle} clickHandler={deleteIdHandler}/>
             </div>
         )
     }

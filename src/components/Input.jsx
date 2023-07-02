@@ -56,7 +56,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
         return (
-            <div className="input-container" style={{height: isExpanded && "160px"}} >
+            <div className="input-container" style={{height: isExpanded && "120px"}} >
                 {
                     isExpanded && (
                         <div className="input-titlebar" >
@@ -71,13 +71,14 @@ import 'react-datepicker/dist/react-datepicker.css';
                             onChange={handleDateChange}
                             minDate={today}
                             maxDate={maxD}
-                            dateFormat="yyyy-MM-dd"
+                            default={today}
+                            dateFormat="dd-MM-yyyy"
                             placeholderText="Set deadline"
                             ref={datePickerRef}
                             />
                             </div>
 
-                            <button onClick={minimize}><AddUpArrow /></button>
+                            <button onClick={minimize} className="upArrow"><AddUpArrow /></button>
                         </div>
                     )
                 }
@@ -85,13 +86,13 @@ import 'react-datepicker/dist/react-datepicker.css';
                 
                 {
                     isExpanded && (
-                        <div className="add-button">
-                            <button type="submit" 
+                        <div className="">
+                            <button type="submit" className="addButton" 
                             onClick={
                                 ()=> {props.onAdd(todoTitle, todoDesc, selectedDate);}
                             }
 
-                            ><AddCircleOutlineIcon fontSize="large"/></button>
+                            ><AddCircleOutlineIcon fontSize="large" fill="white"/></button>
                         </div>
                     )
                 }

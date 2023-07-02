@@ -1,4 +1,4 @@
-import { useState } from "react";
+import deleteIcon from "../images/trash.png"
 
 
     function ListContent(props){
@@ -10,14 +10,23 @@ import { useState } from "react";
         const listTitle = props.title;
 
         return(
-            <div>
+            <div>   
                     {tasks && tasks.length > 0 ? (
                         <ul>
                         {tasks.map((task, index) => (
-                            <li key={index}>
-                                {/* <input className="list-checkbox" type="checkbox" ></input> */}
-                            <strong>{task.title}</strong> - {task.description}
+
+                                <li key={task.id} id={task.id} >
+                                    {/* <input className="list-checkbox" type="checkbox" ></input> */}
+                                <div className="listContent">
+                                    <strong>{task.title}</strong> - {task.description}
+                                </div>
+                                <div className="deleteIcon">
+                                    <img src={deleteIcon} onClick={ () =>
+                                    props.clickHandler(task.id)
+                                }/>
+                                </div>
                             </li>
+
                         ))}
                         </ul>
                     ) : (
